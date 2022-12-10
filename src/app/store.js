@@ -1,8 +1,13 @@
-import { configureStore } from '@reduxjs/toolkit';
-import counterReducer from '../features/counter/counterSlice';
+import { configureStore } from "@reduxjs/toolkit";
+import cakeReducer from "../features/cake/cakeSlice";
+import americanoReducer from "../features/americano/americanoSlice";
+import waffleReducer from "../features/waffle/waffleSlice";
 
-export const store = configureStore({
+const store = configureStore({
   reducer: {
-    counter: counterReducer,
+    cakeReducer,
+    americanoReducer,
+    waffleReducer,
   },
 });
+export default store;

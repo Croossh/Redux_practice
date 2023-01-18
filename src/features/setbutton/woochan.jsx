@@ -4,7 +4,7 @@ import { orderCake } from "../cake/cakeSlice";
 import { orderWaffle } from "../waffle/waffleSlice";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-import "./SetButton.module.css";
+import "./woochan.module.css";
 /*
 질문!
 1. 버튼을 눌렀을 때, 모든 state 를 바꾸려면 어케하누?
@@ -12,16 +12,23 @@ import "./SetButton.module.css";
 3. 근데? 이게 1억개있으면 일일히 이렇게 해야하는가? action.all 이런건 없을까유?
 */
 
+// const newStore = new Array(Object.values(store));
+// console.log(newStore);
+// const findMinNumber = () => {
+//   return Math.min(parseInt(...newStore));
+// };
+// const checkStock = () => {
+//   for (let i = 0; i < stockArr.lenght; i++) {
+//     if (i === 0) {
+//       alert("재고가 부족하여 더이상 주문할 수 없습니다.");
+//     }
+//   }
+// };
+
 const SetButton = () => {
   const store = useSelector((state) => state);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
-  // const newStore = new Array(Object.values(store));
-  // console.log(newStore);
-  // const findMinNumber = () => {
-  //   return Math.min(parseInt(...newStore));
-  // };
 
   const findMinNumber = () => {
     return Math.min(
@@ -30,14 +37,6 @@ const SetButton = () => {
       parseInt(store.waffleReducer)
     );
   };
-
-  // const checkStock = () => {
-  //   for (let i = 0; i < stockArr.lenght; i++) {
-  //     if (i === 0) {
-  //       alert("재고가 부족하여 더이상 주문할 수 없습니다.");
-  //     }
-  //   }
-  // };
 
   return (
     <div>

@@ -14,11 +14,14 @@ const cakeSlice = createSlice({
         ? (state -= 1)
         : (alert("준비한 케이크가 모두 소진되었습니다"), (state = 0));
     },
+    cakeAddStock(state, action) {
+      return (state += action.payload);
+    },
   },
 });
 
 // 얘는 컴포넌트로 들어감
-export const { orderCake } = cakeSlice.actions;
+export const { orderCake, cakeAddStock } = cakeSlice.actions;
 
 // 얘는 store 로 들어감
 export default cakeSlice.reducer;
